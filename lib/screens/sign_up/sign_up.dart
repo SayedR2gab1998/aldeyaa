@@ -1,8 +1,9 @@
 import 'package:aldeyaa/screens/login/login.dart';
-import 'package:aldeyaa/utils/colors..dart';
+import 'package:aldeyaa/utils/colors.dart';
 import 'package:aldeyaa/utils/components.dart';
+
 import 'package:flutter/material.dart';
-import 'package:country_code_picker/country_code_picker.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 
 
 class SignUp extends StatefulWidget {
@@ -17,17 +18,20 @@ class _SignUpState extends State<SignUp> {
   var emailCon = TextEditingController();
   var passCon = TextEditingController();
   var phoneCon = TextEditingController();
+  FocusNode focusNode = FocusNode();
   bool isPass = true;
   IconData suffix = Icons.visibility;
   bool selected = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text('Create Account',
                   style: TextStyle(
@@ -35,7 +39,7 @@ class _SignUpState extends State<SignUp> {
                       fontWeight: FontWeight.w600
                   ),
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(height: 0,),
                 Text('Fill your information below or register\n with your social media',
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -43,10 +47,9 @@ class _SignUpState extends State<SignUp> {
                       fontSize: 18
                   ),
                 ),
-                const SizedBox(height: 40,),
+                const SizedBox(height: 20,),
 
                 //name section
-
                 const Row(
                   children: [
                     Text('Name',
@@ -63,7 +66,7 @@ class _SignUpState extends State<SignUp> {
                   inputType: TextInputType.name,
                   hint: 'John Doe',
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(height: 10,),
 
                 //email section
                 const Row(
@@ -82,7 +85,7 @@ class _SignUpState extends State<SignUp> {
                   inputType: TextInputType.emailAddress,
                   hint: 'example@email.com',
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(height: 10,),
 
                 //pass section
                 const Row(
@@ -110,40 +113,17 @@ class _SignUpState extends State<SignUp> {
                     });
                   }
                 ),
-                const SizedBox(height: 10,),
-                const Row(
-                  children: [
-                    Text('Phone',
-                      style: TextStyle(
-                        fontSize: 18,
-                      ),
+                const SizedBox(height: 20,),
+                IntlPhoneField(
+                  focusNode: focusNode,
+                  decoration: InputDecoration(
+                    labelText: 'Phone Number',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: secondaryColor),
+                      borderRadius: BorderRadius.circular(40),
                     ),
-                  ],
-                ),
-                const SizedBox(height: 10,),
-                Container(
-                  height: 60,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: secondaryColor),
-                    borderRadius: BorderRadius.circular(40),
-                  ),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 80,
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(40),
-                            bottomLeft: Radius.circular(40),
-                          ),
-                        ),
-                        child: CountryCodePicker(),
-                      ),
-                    ],
                   ),
                 ),
-                const SizedBox(height: 10,),
                 //check box section
                 CheckboxListTile(
                   controlAffinity: ListTileControlAffinity.leading,
@@ -197,7 +177,7 @@ class _SignUpState extends State<SignUp> {
                     )),
                   ),
                 ),
-                const SizedBox(height: 30,),
+                const SizedBox(height: 20,),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 50.0),
                   child: Row(

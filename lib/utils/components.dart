@@ -1,4 +1,4 @@
-import 'package:aldeyaa/utils/colors..dart';
+import 'package:aldeyaa/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 void navigateTo(context, widget) =>
@@ -65,13 +65,13 @@ Widget connectSocial({
   return GestureDetector(
     onTap: function,
     child: Container(
-      height: 80,
-      width: 80,
+      height: 60,
+      width: 60,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(color: secondaryColor),
       ),
-      child: Center(child: Image.asset(image,width: 40,)),
+      child: Center(child: Image.asset(image,width: 35,)),
     ),
   );
 }

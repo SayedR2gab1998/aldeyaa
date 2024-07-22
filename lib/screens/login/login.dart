@@ -1,5 +1,5 @@
 import 'package:aldeyaa/screens/sign_up/sign_up.dart';
-import 'package:aldeyaa/utils/colors..dart';
+import 'package:aldeyaa/utils/colors.dart';
 import 'package:aldeyaa/utils/components.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(

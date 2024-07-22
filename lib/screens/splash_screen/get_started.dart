@@ -1,5 +1,5 @@
 import 'package:aldeyaa/screens/login/login.dart';
-import 'package:aldeyaa/utils/colors..dart';
+import 'package:aldeyaa/utils/colors.dart';
 import 'package:aldeyaa/utils/components.dart';
 import 'package:flutter/material.dart';
 

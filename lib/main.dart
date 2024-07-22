@@ -1,8 +1,7 @@
-import 'package:aldeyaa/screens/login/login.dart';
-import 'package:aldeyaa/screens/splash_screen/splash_screen.dart';
+import 'package:aldeyaa/screens/home/home_layout.dart';
 import 'package:flutter/material.dart';
 
-import 'screens/splash_screen/get_started.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const GetStarted(),
+      home: const HomeLayout(),
     );
   }
 }
