@@ -15,14 +15,19 @@ class _LocationWidgetState extends State<LocationWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 50),
+      padding: const EdgeInsets.only(top: 50),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Location'),
+              Text('Location',
+                style: TextStyle(
+                  color: secondaryColor,
+                  fontSize: 22
+                ),
+              ),
               Row(
                 children: [
                   Icon(Icons.location_on,color: mainColor,),
