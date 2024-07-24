@@ -59,7 +59,8 @@ class _BannersState extends State<Banners> {
           effect: JumpingDotEffect(
             activeDotColor: mainColor,
             dotColor: secondaryColor,
-
+            dotHeight: 10,
+            dotWidth: 10
           ),
         ),
       ],

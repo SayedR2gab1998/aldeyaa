@@ -1,4 +1,5 @@
-import 'package:aldeyaa/screens/home_screens/banner.dart';
+import 'package:aldeyaa/screens/home_screens/home_widgets/banner.dart';
+import 'package:aldeyaa/screens/home_screens/home_widgets/category.dart';
 import 'package:aldeyaa/screens/home_screens/home_widgets/location_widget.dart';
 import 'package:aldeyaa/screens/home_screens/home_widgets/search.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,8 @@ class HomeScreen extends StatelessWidget {
             Search(),
             SizedBox(height: 10,),
             Banners(),
+            SizedBox(height: 10,),
+            Category(),
           ],
         ),
       ),
