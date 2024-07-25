@@ -37,20 +37,31 @@ class _CategoryState extends State<Category> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            categoryItem('assets/images/t-shirt.png'),
-            categoryItem('assets/images/pants.png'),
-            categoryItem('assets/images/dress.png'),
-            categoryItem('assets/images/jacket.png'),
+            categoryItem('assets/images/t-shirt.png','T-Shit'),
+            categoryItem('assets/images/pants.png','Pants'),
+            categoryItem('assets/images/dress.png','Dress'),
+            categoryItem('assets/images/jacket.png','Jackets'),
           ],
         ),
       ],
     );
   }
-  Widget categoryItem(String image){
-    return CircleAvatar(
-      radius: 40,
-      backgroundColor: const Color(0xffece2d9),
-      child: Image.asset(image,width: 40,color: mainColor,),
+  Widget categoryItem(String image,String title){
+    return Column(
+      children: [
+        CircleAvatar(
+          radius: 40,
+          backgroundColor: const Color(0xffece2d9),
+          child: Image.asset(image,width: 40,color: mainColor,),
+        ),
+        const SizedBox(height: 10,),
+        Text(title,
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w600
+          ),
+        )
+      ],
     );
   }
 }
