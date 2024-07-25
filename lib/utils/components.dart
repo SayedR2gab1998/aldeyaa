@@ -1,5 +1,6 @@
 import 'package:aldeyaa/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 void navigateTo(context, widget) =>
     Navigator.push(context, MaterialPageRoute(builder: (context) => widget));
@@ -75,3 +76,5 @@ Widget connectSocial({
     ),
   );
 }
+
+
