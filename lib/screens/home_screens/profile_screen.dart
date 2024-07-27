@@ -1,4 +1,5 @@
 import 'package:aldeyaa/screens/home_screens/profile_widgets/profile_main_screen.dart';
+import 'package:aldeyaa/screens/home_screens/profile_widgets/settings.dart';
 import 'package:aldeyaa/utils/colors.dart';
 import 'package:aldeyaa/utils/components.dart';
 import 'package:flutter/material.dart';
@@ -63,25 +64,9 @@ class ProfileScreen extends StatelessWidget {
               Divider(),
               const SizedBox(height: 10,),
               ProfileMainScreen(
-                title: 'Payment Methods',
-                onTap: (){},
-                icon: Iconsax.wallet,
-              ),
-              const SizedBox(height: 10,),
-              Divider(),
-              const SizedBox(height: 10,),
-              ProfileMainScreen(
-                title: 'My Orders',
-                onTap: (){},
-                icon: Icons.list_alt,
-              ),
-              const SizedBox(height: 10,),
-              Divider(),
-              const SizedBox(height: 10,),
-              ProfileMainScreen(
                 title: 'Settings',
-                onTap: (){},
-                icon: Icons.settings,
+                onTap: (){navigateTo(context, const Settings());},
+                icon: Iconsax.setting,
               ),
               const SizedBox(height: 10,),
               Divider(),

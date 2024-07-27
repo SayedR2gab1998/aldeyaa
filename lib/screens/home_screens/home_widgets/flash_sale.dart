@@ -15,18 +15,10 @@ class _FlashSaleState extends State<FlashSale> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Flash Sale',
-          style: TextStyle(
-            fontSize: 22,
-            color: Colors.black,
-            fontWeight: FontWeight.w600
-          ),
-        ),
-        const SizedBox(height: 10,),
-        CategoryListview(),
+        Expanded(child: CategoryListview()),
       ],
     );
   }
