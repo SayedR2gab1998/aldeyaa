@@ -1,3 +1,5 @@
+
+
 name: aldeyaa
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
@@ -40,12 +42,21 @@ dependencies:
   intl_phone_field: ^3.2.0
   smooth_page_indicator: ^1.2.0+3
   carousel_slider: ^4.2.1
+  flutter_native_splash: ^2.4.1
+  shared_preferences: ^2.2.3
+  provider: ^6.1.2
+  flutter_colorpicker: ^1.1.0
+
 
 
 
 dev_dependencies:
+
   flutter_test:
     sdk: flutter
+
+
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -54,6 +65,15 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^3.0.0
 
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/aldeyaa.png
+  android: true
+  ios: true
+  android_12:
+    color: '#ffffff'
+    image: assets/images/aldeyaa.png
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

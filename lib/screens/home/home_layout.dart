@@ -29,63 +29,72 @@ class _HomeLayoutState extends State<HomeLayout>{
   Widget build(BuildContext context) {
 
     return Scaffold(
-      bottomNavigationBar: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
-        decoration:  BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.5),
-              spreadRadius: 0,
-              blurRadius: 25,
-              offset: Offset(8, 20), // changes position of shadow
+      body:Stack(
+        children: [
+          screens[currentIndex],
+          Positioned(
+            right: 20,
+            left: 20,
+            bottom: 20,
+            child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 8,vertical: 8),
+              decoration:  BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.5),
+                    spreadRadius: 0,
+                    blurRadius: 25,
+                    offset: Offset(8, 20), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(40),
+                child: BottomNavigationBar(
+                  selectedItemColor: Colors.white,
+                  unselectedItemColor: secondaryColor,
+                  showSelectedLabels: false,
+                  showUnselectedLabels: false,
+                  backgroundColor: const Color(0xff1f2029),
+                  currentIndex: currentIndex,
+                  onTap: (index){
+                    setState(() {
+                      currentIndex = index;
+                    });
+                  },
+                  items:  const [
+                    BottomNavigationBarItem(
+                        icon: Icon(Iconsax.home),
+                        label: '',
+                        backgroundColor:  Color(0xff1f2029)
+                    ),
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.shopping_bag_outlined),
+                        label: '',
+                        backgroundColor:  Color(0xff1f2029)
+                    ),
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.favorite_border),
+                        label: '',
+                        backgroundColor:  Color(0xff1f2029)
+                    ),
+                    BottomNavigationBarItem(
+                        icon: Icon(Iconsax.message),
+                        label: '',
+                        backgroundColor:  Color(0xff1f2029)
+                    ),
+                    BottomNavigationBarItem(
+                        icon: Icon(Iconsax.user),
+                        label: '',
+                        backgroundColor:  Color(0xff1f2029)
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(40),
-          child: BottomNavigationBar(
-            selectedItemColor: Colors.white,
-            unselectedItemColor: secondaryColor,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            backgroundColor: const Color(0xff1f2029),
-            currentIndex: currentIndex,
-            onTap: (index){
-              setState(() {
-                currentIndex = index;
-              });
-            },
-            items:  const [
-              BottomNavigationBarItem(
-                icon: Icon(Iconsax.home),
-                label: '',
-                backgroundColor:  Color(0xff1f2029)
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_bag_outlined),
-                label: '',
-                  backgroundColor:  Color(0xff1f2029)
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.favorite_border),
-                label: '',
-                  backgroundColor:  Color(0xff1f2029)
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Iconsax.message),
-                label: '',
-                  backgroundColor:  Color(0xff1f2029)
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Iconsax.user),
-                label: '',
-                  backgroundColor:  Color(0xff1f2029)
-              ),
-            ],
           ),
-        ),
+        ],
       ),
-      body: screens[currentIndex],
     );
   }
 }

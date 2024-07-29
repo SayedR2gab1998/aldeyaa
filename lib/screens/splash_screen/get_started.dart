@@ -21,7 +21,7 @@ class _GetStartedState extends State<GetStarted> {
           children: [
             Row(
               children: [
-                Image.asset('assets/images/logo.png',width: 170,),
+                Image.asset('assets/images/aldeyaa.png',width: 170,),
               ],
             ),
             const SizedBox(height: 20,),

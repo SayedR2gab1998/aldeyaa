@@ -19,7 +19,6 @@ class _CategoryState extends State<Category> {
             const Text('Category',
               style: TextStyle(
                 fontSize: 22,
-                color: Colors.black,
                 fontWeight: FontWeight.w600
               ),
             ),

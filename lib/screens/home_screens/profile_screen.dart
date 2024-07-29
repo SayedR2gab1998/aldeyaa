@@ -1,9 +1,11 @@
+import 'package:aldeyaa/provider/app_provider.dart';
 import 'package:aldeyaa/screens/home_screens/profile_widgets/profile_main_screen.dart';
 import 'package:aldeyaa/screens/home_screens/profile_widgets/settings.dart';
 import 'package:aldeyaa/utils/colors.dart';
 import 'package:aldeyaa/utils/components.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -32,7 +34,6 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     const CircleAvatar(
                       radius: 70,
-                      backgroundColor: Colors.red,
                       backgroundImage: NetworkImage('https://i.pinimg.com/564x/77/2a/a7/772aa709423494dba2e436c8df1fe643.jpg'),
                     ),
                     Positioned(

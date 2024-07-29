@@ -1,5 +1,7 @@
+import 'package:aldeyaa/provider/app_provider.dart';
 import 'package:aldeyaa/screens/home/home_layout.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 
 
@@ -13,15 +15,25 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return ChangeNotifierProvider(
+      create: ((contxet)=>AppProvider()),
+      child: Consumer<AppProvider>(
+        builder: (BuildContext context,AppProvider value, Widget? child)=> MaterialApp(
+          title: 'AlDeyaa',
+          themeMode: value.themeMode,
+          darkTheme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+                seedColor: Color(value.appColor), brightness: Brightness.dark),
+          ),
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+                seedColor: Color(value.appColor), brightness: Brightness.light),
+            useMaterial3: true,
+          ),
+          debugShowCheckedModeBanner: false,
+          home: const HomeLayout(),
+        ),
       ),
-      debugShowCheckedModeBanner: false,
-      home: const HomeLayout(),
     );
   }
 }

@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
       appBar: AppBar(),
       body: Center(child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Image.asset('assets/images/logo.png'),
+        child: Image.asset('assets/images/aldeyaa.png'),
       )),
     );
   }
